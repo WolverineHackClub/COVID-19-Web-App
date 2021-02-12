@@ -1,8 +1,12 @@
 <!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 
 <head>
-	{% block head %}
 	<title>Covid-CaseQuest</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -17,7 +21,6 @@
 			bottom: 4%;
 		}
 	</style>
-	{% endblock %}
 </head>
 
 <body class="is-preload">
@@ -50,25 +53,26 @@
 		<!-- One -->
 		<section id="one" class="wrapper style2 spotlights">
 			<section>
-				<a href="#" class="image"><img src="{{ url_for('static',filename='images/pic01.jpg') }}" alt="" data-position="center center" /></a>
+				<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2>See The World Map</h2>
 									<p> To take a look at cases on a global scale, click the button below. </p>
 									<ul class="actions">
-										<a href="world" class="button">Click To Access The World Map</a>
+										<a href="global_graph.html" class="button">Click To Access The World Map</a>
 									</ul>
 								</div>
 							</div>
 						</section>
 						<section>
-							<a href="#" class="image"><img src="{{ url_for('static',filename='images/pic02.jpg') }}" alt="" data-position="top center" /></a>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
 							<div class="content">
 								<div class="inner">
 									<h2> See The U.S Map</h2>
 									<p>If you wish to take a look at the U.S. specifically, click the button below for the U.S. map.</p>
 									<ul class="actions">
-										<a href="us" class="button">Click To Access The US Map</a>
+										<a href="US_graph_cases.html" class="button">Cases</a>
+                    <a href="US_graph_tests.html" class="button">Tests</a>
 									</ul>
 								</div>
 							</div>
@@ -90,7 +94,7 @@
 									<h3>News</h3>
 									<p>Find out the latest news on the ongoing coronavirus pandemic by clicking the button down below:</p>
                   <ul class="actions">
-                    <a href="news" class="button" id = "l_m_buttons">Learn More</a>
+                    <a href="news.html" class="button" id = "l_m_buttons">Learn More</a>
                   <ul class="actions">
 								</section>
 								<section>
@@ -98,7 +102,7 @@
 									<h3>Treatments</h3>
 									<p>Learn about the avaliable treatments and medicine available to help overcome the COVID virus and pandemic.</p>
                   <ul class="actions">
-                    <a href="treatments" class="button" id = "l_m_buttons">Learn more</a>
+                    <a href="treatment.html" class="button" id = "l_m_buttons">Learn more</a>
                   </ul>
 								</section>
 								<section>
@@ -106,7 +110,7 @@
 									<h3>Symptoms</h3>
 									<p>Worried that you might have COVID? Here's a list of symptoms, and a guide for whether you should consider asking your doctor to get a check up.Click the button down below:</p>
                   <ul class="actions">
-                    <a href="symptoms" class="button" id = "l_m_buttons">Learn more</a>
+                    <a href="symptoms.html" class="button" id = "l_m_buttons">Learn more</a>
                   </ul>
 								</section>
 								<section>
@@ -114,15 +118,15 @@
 									<h3>Rules/Requirements</h3>
 									<p>Find out the rules/regulations surrounding quarantine and COVID in your country and state</p>
                   <ul class="actions">
-                    <a href="rules" class="button" id = "l_m_buttons">Learn more</a>
+                    <a href="Rules.html" class="button" id = "l_m_buttons">Learn more</a>
                   </ul>
 								</section>
 								<section>
 									<span class="icon solid major fa-link"></span>
-									<h3>WIP</h3>
-									<p>This tab is a work in progress and will be coming soon</p>
+									<h3>Statistics</h3>
+									<p>Linear Regression</p>
                   <ul class="actions">
-                    <a href="" class="button" id = "l_m_buttons" >Learn more</a>
+                    <a href="Statistics.html" class="button" id = "l_m_buttons" >Learn more</a>
                   </ul>
 								</section>
 								<section>
@@ -130,7 +134,7 @@
 									<h3>Prevention tactics</h3>
 									<p>Want to make sure that you're safe? Click below for more tips and tricks to prevent getting sick with COVID and other diseases.</p>
                   <ul class="actions">
-                    <a href="prevention" class="button" id = "l_m_buttons">Learn more</a>
+                    <a href="preventiontactics.html" class="button" id = "l_m_buttons">Learn more</a>
                   </ul>
 								</section>
 							</div>
@@ -155,13 +159,13 @@
     </footer>
       
 		<!-- Scripts -->
-			<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/jquery.scrollex.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/jquery.scrolly.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/browser.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/breakpoints.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/util.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.scrollex.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/jquery.scrolly.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/browser.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/breakpoints.min.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+		<script src="{{ url_for('static',filename='js/main.js') }}"></script>
 
 	</body>
 </html>

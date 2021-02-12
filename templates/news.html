@@ -9,18 +9,23 @@
 		<title>News</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" />
-	<noscript>
-		<link rel="stylesheet" href="{{ url_for('static',filename='css/noscript.css') }}" /></noscript>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" />
+    <noscript>
+      <link rel="stylesheet" href="{{ url_for('static',filename='css/noscript.css') }}" /></noscript>
 	</head>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="recent-news-boxes.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<body class="is-preload">
 
 		<!-- Header -->
 			<header id="header">
-				<a href="/" class="title"></a>
+				<a href="index.html" class="title"></a>
 				<nav>
 					<ul>
-						<li><a href="/">Home</a></li>
+						<li><a href="index.html">Home</a></li>
 										</ul>
 				</nav>
 			</header>
@@ -29,15 +34,91 @@
 			<div id="wrapper">
 
 				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">News</h1>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						</div>
-					</section>
-
-			</div>
+					<section class="recentNews">
+            <div class="container">
+              <h2 class="news-title">Latest COVID-19 News</h2>
+              <div class="row">
+                <div class="ct-blog col-sm-6 col-md-4">
+                  <div class="inner">
+                    <div class="fauxcrop">
+                      <a href="#"><img alt="News Entry" src="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/5fe8ed00-ca42-44f0-95f4-186c45ed81ba.jpg" height="300px" width = "400px" margin-right="20px"></a>
+                    </div>
+                    <div class="ct-blog-content">
+                      <div class="ct-blog-date">
+                      </div>
+                      <h3 class="ct-blog-header">
+                        Fauci hopes Covid-19 vaccinations for older children can start in late spring or summer
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="ct-blog col-sm-6 col-md-4">
+                  <div class="inner">
+                    <div class="fauxcrop">
+                      <a href="#"><img alt="News Entry" src="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/a61d251b-7484-465c-bc8c-5475cb865b6e.jpg" height="300px" width = "400px"></a>
+                    </div>
+                    <div class="ct-blog-content">
+                      <div class="ct-blog-date">
+                        
+                      </div>
+                      <h3 class="ct-blog-header">
+                        More than 1 million Covid-19 vaccine doses have been administered in Michigan
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="ct-blog col-sm-6 col-md-4">
+                  <div class="inner">
+                    <div class="fauxcrop">
+                      <a href="#"><img alt="News Entry" src="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/bb511427-266d-4c3d-b77d-861cbe23852c.jpg" height="300px" width = "400px"></a>
+                    </div>
+                    <div class="ct-blog-content">
+                      <div class="ct-blog-date">
+                        
+                      </div>
+                      <h3 class="ct-blog-header">
+                        CNN's Stephanie Elam answers your questions about California's vaccine rollout and reopening plan
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="ct-blog col-sm-6 col-md-4">
+                  <div class="inner">
+                    <div class="fauxcrop">
+                      <a href=""><img alt="News Entry" src="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/ce87b362-8160-4141-aecd-bf4120d357f7.jpg" height="300px" width = "400px></a>
+                    </div>
+                    <div class="ct-blog-content">
+                      <div class="ct-blog-date">
+                        
+                      </div>
+                      <h3 class="ct-blog-header">
+                        Italy recommends AstraZeneca vaccine for people under 55
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="ct-blog col-sm-6 col-md-4">
+                  <div class="inner">
+                    <div class="fauxcrop">
+                      <a href="#"><img alt="News Entry" src="https://dynaimage.cdn.cnn.com/cnn/digital-images/org/124bab67-c9a8-4648-9d72-702b34c57cdb.jpg" height="300px" width = "400px></a>
+                    </div>
+                    <div class="ct-blog-content">
+                      <div class="ct-blog-date">
+                       
+                      </div>
+                      <h3 class="ct-blog-header">
+                        Cuba will implement a nightly curfew in Havana to combat Covid-19 spread
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="btn-news btn-contests">
+                
+              </div>
+            </div>
+          </section>
 
 		<!-- Footer -->
 			<footer id="footer" class="wrapper alt">
@@ -49,12 +130,13 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/jquery.scrollex.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/jquery.scrolly.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/browser.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/breakpoints.min.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/util.js') }}"></script>
-			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrollex.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/jquery.scrolly.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/browser.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/breakpoints.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/util.js') }}"></script>
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
 	</body>
 </html>
