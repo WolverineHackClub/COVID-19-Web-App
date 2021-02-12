@@ -9,8 +9,9 @@
 		<title>News</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" />
+    <noscript>
+      <link rel="stylesheet" href="{{ url_for('static',filename='css/noscript.css') }}" /></noscript>
 	</head>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href="recent-news-boxes.css" rel="stylesheet">
