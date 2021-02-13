@@ -179,8 +179,8 @@ class GraphingDataset:
 		ax.set_xticks(np.arange(len(self.x_axis)))
 		plt.xscale('linear')
 		ax.legend((plot1[0], plot2[0]), ("COVID Cases in The U.S. Over Time", "Linear Regression"))
-		self.figurename = self.location + "_" + self.header_name + "_" + self.filtered_dataset[0][-1]
-		fig.savefig(self.figurename+".png")
+		self.figurename = self.location + "_" + self.header_name
+		fig.savefig("static/images/"+self.figurename+".png")
 
 
 USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "total_cases", "United States")
