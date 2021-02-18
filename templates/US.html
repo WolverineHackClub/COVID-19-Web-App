@@ -20,7 +20,8 @@
 				<a href="/" class="title"></a>
 				<nav>
 					<ul>
-						<li><a href="/">Home</a></li>
+						<li><a href="/#one">Home</a></li>
+
 											</ul>
 				</nav>
 			</header>
@@ -31,8 +32,30 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">U.S. Map</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
+							<h1 class="major">U.S. Maps & Graphs</h1>
+							<h2>Cases:</h2>
+							<h3>{{  cases  }}</h3>
+							<h2>Recoveries:</h2>
+							<h3>{{  recoveries  }}</h3>
+							<h2>Deaths:</h2>
+							<h3>{{  deaths  }}</h3>
+							<h2>Active Cases:</h2>
+							<h3>{{  active  }}</h3>
+							<h3>US Confirmed Cases Per State</h2>
+							<span class="image fit"><embed type="text/html" src="{{ url_for('static',filename='embed/US_graph_cases.html') }}" width="1000" height="620"></span>
+							<hr>
+							<h3>US Confirmed Cases Since Jan 22 2020</h3>
+							<span class="image fit"><embed type="image/png" src="{{ url_for('static',filename='images/United States_total_cases.png') }}" width="640" height="500"></span>
+							<hr>
+							<h3>US Daily Increase In Cases Since Jan 22 2020</h3>
+							<span class="image fit"><embed type="image/png" src="{{ url_for('static',filename='images/United States_new_cases.png') }}" width="640" height="500"></span>
+							<hr>
+							<h3>US Vaccinatiations Since Jan 22 2020</h3>
+							<span class="image fit"><embed type="image/png" src="{{ url_for('static',filename='images/United States_total_vaccinations.png') }}" width="650" height="500"></span>
+							<hr>
+							<h3>US Tests Per 1M</h2>
+							<span class="image fit"><embed type="text/html" src="{{ url_for('static',filename='embed/US_graph_tests.html') }}" width="1000" height="620"></span>
+							<hr>
 							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
 							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
 						</div>

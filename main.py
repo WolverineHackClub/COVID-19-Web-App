@@ -70,6 +70,10 @@ def rules():
 @app.route("/prevention")
 def prevention():
 	return render_template("preventiontactics.html")
+      
+@app.route("/statistics")
+def statistics():
+        return render_template("Statistics.html")
 
 #development URL
 from pyngrok import ngrok# for dev url
