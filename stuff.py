@@ -1,3 +1,20 @@
+import numpy as np
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import dask.dataframe as dd
+import geopandas as gpd
+import json
+from bokeh.io import output_file
+from bokeh.plotting import figure
+from bokeh.models import HoverTool
+from bokeh.models import GeoJSONDataSource,LinearColorMapper, ColorBar
+from bokeh.palettes import brewer
+import datetime
+import matplotlib.pyplot as plt
+from datetime import date
+import scipy.stats as sp
+
 url1 = "https://www.worldometers.info/coronavirus/"
 url2 = "https://www.worldometers.info/coronavirus/country/us/"
 
