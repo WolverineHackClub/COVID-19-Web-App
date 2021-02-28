@@ -34,13 +34,17 @@
 						<div class="inner">
 							<h1 class="major">U.S. Maps & Graphs</h1>
 							<h2>Cases:</h2>
-							<h3>{{  cases  }}</h3>
+							<h3 color="Grey">{{  cases  }}</h3>
+							<h2>Vaccinations:</h2>
+							<h3 color="Light Green">{{  vaccinations  }}</h3>
 							<h2>Recoveries:</h2>
-							<h3>{{  recoveries  }}</h3>
+							<h3 color="Light Green">{{  recoveries  }}</h3>
 							<h2>Deaths:</h2>
-							<h3>{{  deaths  }}</h3>
+							<h3 color="Red">{{  deaths  }}</h3>
 							<h2>Active Cases:</h2>
 							<h3>{{  active  }}</h3>
+							<h2>Daily New Cases:</h2>
+							<h3>{{  newCases  }}</h3>
 							<h3>US Confirmed Cases Per State</h2>
 							<span class="image fit"><embed type="text/html" src="{{ url_for('static',filename='embed/US_graph_cases.html') }}" width="1000" height="620"></span>
 							<hr>

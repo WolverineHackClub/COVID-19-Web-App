@@ -32,6 +32,18 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">World Maps</h1>
+							<h2>Cases:</h2>
+							<h3 color="Grey">{{  cases  }}</h3>
+							<h2>Vaccinations:</h2>
+							<h3 color="Light Green">{{  vaccinations  }}</h3>
+							<h2>Recoveries:</h2>
+							<h3 color="Light Green">{{  recoveries  }}</h3>
+							<h2>Deaths:</h2>
+							<h3 color="Red">{{  deaths  }}</h3>
+							<h2>Active Cases:</h2>
+							<h3>{{  active  }}</h3>
+							<h2>Daily New Cases:</h2>
+							<h3>{{  newCases  }}</h3>
 							<h2>Cases Per Nation</h2>
 							<span class="image fit"><embed type="text/html" src="{{ url_for('static',filename='embed/global_graph.html') }}" width="1000" height="620"></span>
 							<hr>

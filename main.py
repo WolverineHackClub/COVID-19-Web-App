@@ -3,7 +3,7 @@
 #Started on 2020/10/1
 #2020/10/7 I got the webserver and development URL working which is good.
 #Function to be able to pip install packages
-
+#Hi
 def install(package):
   import subprocess
   subprocess.check_call(["python", '-m', 'pip', 'install', package]) 
@@ -45,11 +45,11 @@ def main():
 
 @app.route("/world")
 def world():
-	return render_template("World.html")
+	return render_template("World.html", cases=2345, vaccinations=2345, deaths=2345, recoveries=2345, active=2345, newCases=2345)
 
 @app.route("/us")
 def us():
-	return render_template("US.html")
+	return render_template("US.html", cases=2345, vaccinations=2345, deaths=2345, recoveries=2345, active=2345, newCases=2345)
 
 @app.route("/news")
 def news():
