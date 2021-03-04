@@ -4,6 +4,7 @@
 #2020/10/7 I got the webserver and development URL working which is good.
 #Function to be able to pip install packages
 #Hi
+#hello world
 def install(package):
   import subprocess
   subprocess.check_call(["python", '-m', 'pip', 'install', package]) 
