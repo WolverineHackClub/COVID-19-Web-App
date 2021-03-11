@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 from datetime import date
 import scipy.stats as sp
 import csv
-
+#hannah
 url1 = "https://www.worldometers.info/coronavirus/"
 url2 = "https://www.worldometers.info/coronavirus/country/us/"
 
