@@ -8,6 +8,8 @@ ___
 
 ## Building The Project in A Local Environment
 
+# **WARNING** Becuase of the Geopandas dependency and its dependencies, the current method of building and running the program, shown below does not work, we are actively working to fix and improve this, Thank you.
+
 We recomend building a Python 3.7+ environment, but we are pretty confident it could work in most Python 3 environments.
 
 We also recomend running this in a virtual environment during development which can be done a variety of ways:
