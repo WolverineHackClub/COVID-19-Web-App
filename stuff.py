@@ -117,7 +117,7 @@ class GraphingDataset:
 
     def get_csv(self):  # gets csv data from certain areas and saves it to graphs.csv
         response = requests.get(self.csvpath)
-        graphCSV = open("graphs.csv", "wb")
+        graphCSV = open("data/graphdata.csv", "wb")
         graphCSV.write(response.content)
 
     def sort_Data(self,
