@@ -2,14 +2,17 @@ import numpy as np
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+'''
+#commented out for now so i can get basic functionality working for rn
 import dask.dataframe as dd
-import geopandas as gpd
-import json
+#import geopandas as gpd
+#import json
 from bokeh.io import output_file
 from bokeh.plotting import figure
 from bokeh.models import HoverTool
 from bokeh.models import GeoJSONDataSource,LinearColorMapper, ColorBar
 from bokeh.palettes import brewer
+'''
 import datetime
 import matplotlib.pyplot as plt
 from datetime import date
@@ -74,7 +77,7 @@ scrapeCases(url2)
 
 def write_output_file():
     filestring = "gcases:" + globalCounters["Infections"] + "\ngdeaths:" + globalCounters["Deaths"] + "\ngrecoveries:" + globalCounters["Recoveries"] + "\nuscases:" + usCounters["Infections"] + "\nusdeaths:" + usCounters["Deaths"] + "\nusrecoveries:" + usCounters["Recoveries"]
-    file = open("data.txt", "w")
+    file = open("data/data.txt", "w")
     file.write(filestring)
     file.close()
 
@@ -82,10 +85,13 @@ write_output_file()
 
 #ik this isnt commented very well im working on it, I Just want to get to a point where it works
 
-
 plt.rcdefaults()
 fig, ax = plt.subplots()  # allow for multiple subplots
 
+def get_csv(url):  # gets csv data from certain areas and saves it to graphs.csv
+        response = requests.get(url)
+        graphCSV = open("data/graphdata.csv", "wb")
+        graphCSV.write(response.content)
 
 class GraphingDataset:
     csvpath = ""
@@ -102,7 +108,6 @@ class GraphingDataset:
         self.csvpath = csv_path
         self.header_name = headername
         self.location = location
-        self.get_csv()
         self.csv = self.read_CSV(self.csvpath)
         self.filtered_dataset = self.sort_Data(self.header_name)
         self.filtered_dataset = self.reduce_locations(self.filtered_dataset, self.location)
@@ -114,11 +119,6 @@ class GraphingDataset:
         self.linReg = self.linear_regression(self.filtered_dataset[2])
         print(self.linReg)
         self.make_graph()
-
-    def get_csv(self):  # gets csv data from certain areas and saves it to graphs.csv
-        response = requests.get(self.csvpath)
-        graphCSV = open("data/graphdata.csv", "wb")
-        graphCSV.write(response.content)
 
     def sort_Data(self,
                   headername):  # sorts the needed data into categories you need and returns the categories as a list
@@ -222,19 +222,24 @@ class GraphingDataset:
         fig.savefig("static/images/"+self.picturename)
         ax.clear()
 
-USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "total_cases",
+get_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
+
+USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_cases",
                                     "United States")
-USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "new_cases",
+USInfectionsGraph = GraphingDataset("data/graphdata.csv", "new_cases",
                                     "United States")
-USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "total_vaccinations",
+USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_vaccinations",
                                     "United States")
-USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "total_cases",
+USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_cases",
                                     "World")
-USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "new_cases",
+USInfectionsGraph = GraphingDataset("data/graphdata.csv", "new_cases",
                                     "World")
-USInfectionsGraph = GraphingDataset("https://covid.ourworldindata.org/data/owid-covid-data.csv", "total_vaccinations",
+USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_vaccinations",
                                     "World")
 
+
+# i cant confirm these work and so for right now they are commented out until they can be confirmed to work                                    
+'''
 def scrape_table_data(link, id_table, save_path):
   #getting page with COVID-19 data
   page = requests.get(link)
@@ -402,6 +407,7 @@ def news_scrape():
 
 news_scrape()
 
+'''
 '''
 #scrape global COVID data
 scrape_table_data("https://www.worldometers.info/coronavirus/country/us", 'usa_table_countries_today', 'data/states_1.csv')

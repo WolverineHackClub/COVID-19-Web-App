@@ -14,29 +14,13 @@ install("dask[dataframe]")
 
 #Importing libraries
 
-import numpy as np
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import dask.dataframe as dd
-import geopandas as gpd
-import json
-from bokeh.io import output_file
-from bokeh.plotting import figure
-from bokeh.models import HoverTool
-from bokeh.models import GeoJSONDataSource,LinearColorMapper, ColorBar
-from bokeh.palettes import brewer
-import datetime
-import matplotlib.pyplot as plt
-from datetime import date
-import scipy.stats as sp
-from flask import render_template
+
 
 # web scrapping will go below this comment
 
 
 #setting up the app and server
-from flask import Flask #webserver and backend
+from flask import Flask, render_template #webserver and backend
 
 app = Flask(__name__)
 
