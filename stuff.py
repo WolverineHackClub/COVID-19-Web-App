@@ -123,7 +123,7 @@ class GraphingDataset:
     def sort_Data(self,
                   headername):  # sorts the needed data into categories you need and returns the categories as a list
         # header name is the name of the header for the data requested
-        data = self.read_CSV("graphs.csv")
+        data = self.csv
         dates = self.to_list(data, "date")
         countries = self.to_list(data, "location")
         attributes = self.to_list(data, headername)
