@@ -1,0 +1,6 @@
+gcases:115,601,031 
+gdeaths:2,566,967
+grecoveries:91,343,543
+uscases:29,417,799 
+usdeaths:530,950
+usrecoveries:19,979,658
