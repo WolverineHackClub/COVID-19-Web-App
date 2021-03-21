@@ -350,6 +350,8 @@ def create_map(df, map_title, data_col, file_name, loc_type_col):
   #output global total cases graph to html file
   output_file(file_name)
 
+#scrape headlines, images, and links for COVID news articles
+
 def news_scrape():
   #get today's date
   d = (datetime.datetime.utcnow() - datetime.timedelta(hours=5)).strftime("%m-%d-%y")
@@ -432,7 +434,7 @@ create_map(df_m, 'COVID US Tests',  "Tests/", 'graphs/US_graph_tests.html', 'USA
 
 '''
 
-#scrape headlines, images, and links for COVID news articles
+
 
 
 
