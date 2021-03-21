@@ -30,11 +30,27 @@ def main():
 
 @app.route("/world")
 def world():
-	return render_template("World.html", cases=2345, vaccinations=2345, deaths=2345, recoveries=2345, active=2345, newCases=2345)
+	inputFile = open("data/infection_data.txt", "r")
+	dataString = inputFile.readlines()
+	for i in range(0, len(dataString)):
+		stringVal = dataString[i]
+		dataString[i] = stringVal[:-1]
+		dataString[i] = dataString[i].split(":")
+
+
+	return render_template("World.html", cases=dataString[0][1], vaccinations=2345, deaths=dataString[1][1], recoveries=dataString[2][1], active=2345, newCases=2345)
 
 @app.route("/us")
 def us():
-	return render_template("US.html", cases=2345, vaccinations=2345, deaths=2345, recoveries=2345, active=2345, newCases=2345)
+	inputFile = open("data/infection_data.txt", "r")
+	dataString = inputFile.readlines()
+	for i in range(0, len(dataString)):
+		stringVal = dataString[i]
+		dataString[i] = stringVal[:-1]
+		dataString[i] = dataString[i].split(":")
+
+
+	return render_template("US.html", cases=dataString[3][1], vaccinations=2345, deaths=dataString[4][1], recoveries=dataString[5][1], active=2345, newCases=2345)
 
 @app.route("/news")
 def news():
