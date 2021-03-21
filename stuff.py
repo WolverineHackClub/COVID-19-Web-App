@@ -76,7 +76,7 @@ scrapeCases(url2)
 """This function "formatOutputString" makes the output string to be displayed on the website. This is only for debugging"""
 
 def write_output_file():
-    filestring = "gcases:" + globalCounters["Infections"] + "\ngdeaths:" + globalCounters["Deaths"] + "\ngrecoveries:" + globalCounters["Recoveries"] + "\nuscases:" + usCounters["Infections"] + "\nusdeaths:" + usCounters["Deaths"] + "\nusrecoveries:" + usCounters["Recoveries"]
+    filestring = "gcases:" + globalCounters["Infections"] + "\ngdeaths:" + globalCounters["Deaths"] + "\ngrecoveries:" + globalCounters["Recoveries"] + "\nuscases:" + usCounters["Infections"] + "\nusdeaths:" + usCounters["Deaths"] + "\nusrecoveries:" + usCounters["Recoveries"] + "\n"
     file = open("data/data.txt", "w")
     file.write(filestring)
     file.close()
