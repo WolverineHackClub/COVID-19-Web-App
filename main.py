@@ -5,13 +5,14 @@
 #Function to be able to pip install packages
 #Hi
 #hello world
+'''
 def install(package):
   import subprocess
-  subprocess.check_call(["python", '-m', 'pip', 'install', package]) 
+  subprocess.check_call(["python", '-m', 'pip', 'install', package])
 
 #Installing packages
 install("dask[dataframe]")
-
+'''
 #Importing libraries
 
 
@@ -71,11 +72,11 @@ def rules():
 @app.route("/prevention")
 def prevention():
 	return render_template("preventiontactics.html")
-      
+
 @app.route("/statistics")
 def statistics():
         return render_template("Statistics.html")
-
+'''
 #development URL
 from pyngrok import ngrok# for dev url
 
@@ -87,4 +88,4 @@ app.run(host="0.0.0.0", port=5000, debug=True) #running the app on 0.0.0.0 port 
 #comment stuff for us to understand pls
 #ill try -coop
 #webscraping stuff continued, needs to go here so that it allows the server to start
-
+'''
