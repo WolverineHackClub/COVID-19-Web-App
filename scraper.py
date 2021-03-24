@@ -115,10 +115,12 @@ class GraphingDataset:
     figurename = ''
     picturename = ''
 
-    def __init__(self, csv_path, headername, location):
+    def __init__(self, csv_path, headername, location, graphTitle, y_axis):
         self.csvpath = csv_path
         self.header_name = headername
         self.location = location
+        self.graphTitle = graphTitle
+        self.yaxis = y_axis
         self.csv = self.read_CSV(self.csvpath)
         self.filtered_dataset = self.sort_Data(self.header_name)
         self.filtered_dataset = self.reduce_locations(self.filtered_dataset, self.location)
@@ -222,9 +224,9 @@ class GraphingDataset:
                 self.days_delta(self.filtered_dataset[0][0], self.filtered_dataset[0][-1]))
             plot1 = ax.plot(self.x_axis, self.filtered_dataset[2])
         plot2 = ax.plot(self.linReg[2], self.linReg[1], c="r")
-        ax.set_ylabel('Number of Total Cases')
+        ax.set_ylabel(self.yaxis)
         ax.set_xlabel("Days after Jan 22 2020")
-        ax.set_title(self.header_name + self.location)
+        ax.set_title(self.graphTitle)
         ax.set_xticks(np.arange(len(self.x_axis)))
         plt.xscale('linear')
         ax.legend((plot1[0], plot2[0]), (self.header_name + self.location, "Linear Regression"))
@@ -236,17 +238,17 @@ class GraphingDataset:
 get_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
 
 USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_cases",
-                                    "United States")
+                                    "United States", "Total Cases in the United States", "Number of Cases")
 USInfectionsGraph = GraphingDataset("data/graphdata.csv", "new_cases",
-                                    "United States")
+                                    "United States", "New Daily Cases in the United States", "Number of Daily Cases")
 USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_vaccinations",
-                                    "United States")
+                                    "United States", "Total Vaccinations in the United States", "Number of Vaccinations")
 USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_cases",
-                                    "World")
+                                    "World", "Total Cases Worldwide", "Number of Cases")
 USInfectionsGraph = GraphingDataset("data/graphdata.csv", "new_cases",
-                                    "World")
+                                    "World", "Daily New Cases Worldwide", "Number of Cases")
 USInfectionsGraph = GraphingDataset("data/graphdata.csv", "total_vaccinations",
-                                    "World")
+                                    "World", "Total Vaccinations Worldwide", "Number of Vaccinations")
 
 
 # i cant confirm these work and so for right now they are commented out until they can be confirmed to work                                    
