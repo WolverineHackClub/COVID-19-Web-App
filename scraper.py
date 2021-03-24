@@ -2,6 +2,17 @@ import numpy as np
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+
+#Function to be able to pip install packages
+#Hi
+#hello world
+def install(package):
+  import subprocess
+  subprocess.check_call(["python", '-m', 'pip', 'install', package]) 
+
+#Installing packages
+install("dask[dataframe]")
+
 '''
 #commented out for now so i can get basic functionality working for rn
 import dask.dataframe as dd

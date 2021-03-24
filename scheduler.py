@@ -4,6 +4,11 @@ import subprocess
 import datetime
 from time import strftime, sleep
 import logging
+import pandas as pd
+
+#opening analytics file
+analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
+
 
 # creating error logs
 logging.basicConfig(filename='static/error_log.log', level=logging.DEBUG, format='%(asctime)s %(levelname)s %(name)s %(message)s')
@@ -16,8 +21,8 @@ subprocess.run(["python3", "scraper.py"]
 #Flask Setup
 subprocess.run(["export", "FLASK_APP=server.py"])
 
-#set the restart time to be  23:59
-restartTime = datetime.time(23,59,00).strftime('%H:%M:%S')
+#set the restart time to be  00:01:00
+restartTime = datetime.time(00,01,00).strftime('%H:%M:%S')
 
 #set loop conditions to default values
 restartCondition = False
@@ -43,6 +48,11 @@ while(!exitCondition):
 
         try:
             server.terminate() #terminate the server process
+            # update analytic sheet
+            newRow = {'date': datetime.date.today(), 'daily_visits': 0, 'total_visits': analytics["total_visits"][len(analytics["total_visits"])-1]}
+            analytics = analytics.append(newRow, ignore_index=True)
+            analytics.to_csv('data/web_analytics.csv')
+            
             subprocess.run(["python3", "scraper.py"]) # run the scraper program
         except Exception as err:
             logger.error(err)
