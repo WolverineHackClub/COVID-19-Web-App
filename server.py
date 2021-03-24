@@ -1,7 +1,7 @@
 #COVID information Web app
-#Haley, Alexander, William, Nabeela, and Cooper
+#
 #Started on 2020/10/1
-#2020/10/7 I got the webserver and development URL working which is good.
+#
 #Hi
 #hello world
 

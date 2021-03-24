@@ -88,7 +88,7 @@ scrapeCases(url2)
 
 def write_output_file():
     filestring = "gcases:" + globalCounters["Infections"] + "\ngdeaths:" + globalCounters["Deaths"] + "\ngrecoveries:" + globalCounters["Recoveries"] + "\nuscases:" + usCounters["Infections"] + "\nusdeaths:" + usCounters["Deaths"] + "\nusrecoveries:" + usCounters["Recoveries"] + "\n"
-    file = open("data/data.txt", "w")
+    file = open("data/infection_data.txt", "w")
     file.write(filestring)
     file.close()
 
