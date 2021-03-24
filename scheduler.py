@@ -26,7 +26,7 @@ while(!exitCondition):
                 print("Scraping Data...")
                 print("Restarting Server...")
                 restartCondition = True
-            time.sleep(60)
+            time.sleep(1)
 
         server.terminate() #terminate the server process
         subprocess.run(["python3", "scraper.py"]) # run the scraper program
