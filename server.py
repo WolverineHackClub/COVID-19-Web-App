@@ -9,7 +9,6 @@
 from flask import Flask, render_template #webserver and backend
 import datetime
 from time import strftime
-from pyngrok import ngrok # for dev URL
 import pandas as pd # for analytics csv
 
 
@@ -70,9 +69,6 @@ def prevention():
 def statistics():
         return render_template("Statistics.html")
 
-
-url = ngrok.connect(5000)# setting up a dev url running on port 5000
-print(url) #printing url
 
 #so i found a solution to the probelms we saw earlier with the localhost
 app.run(host="0.0.0.0", port=5000, debug=True) #running the app on 0.0.0.0 port 5000
