@@ -16,8 +16,10 @@ logging.basicConfig(filename='static/error_log.log', level=logging.DEBUG, format
 logger=logging.getLogger(__name__)
 
 #run the scraper code first
-subprocess.run(["python3", "scraper.py"]
-
+try:
+    subprocess.run(["python3", "scraper.py"]
+except Exception as err:
+    logger.error(err)
 #Flask Setup
 subprocess.run(["export", "FLASK_APP=server.py"])
 
