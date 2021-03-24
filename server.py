@@ -71,7 +71,7 @@ def statistics():
 
 
 #so i found a solution to the probelms we saw earlier with the localhost
-app.run(host="0.0.0.0", port=5000, debug=True) #running the app on 0.0.0.0 port 5000
+app.run(host="0.0.0.0", port=5000, debug=False) #running the app on 0.0.0.0 port 5000
 #comment stuff for us to understand pls
 #ill try -coop
 #webscraping stuff continued, needs to go here so that it allows the server to start
