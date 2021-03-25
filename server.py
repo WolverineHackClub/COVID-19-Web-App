@@ -4,7 +4,6 @@
 #
 #Hi
 #hello world
-<<<<<<< HEAD:main.py
 '''
 def install(package):
   import subprocess
@@ -12,10 +11,8 @@ def install(package):
 
 #Installing packages
 install("dask[dataframe]")
-'''
-=======
 
->>>>>>> b6e0c4327174c7affe7a4bbe4a92f897a4f4da0d:server.py
+'''
 #Importing libraries
 from flask import Flask, render_template #webserver and backend
 import datetime
@@ -79,16 +76,14 @@ def prevention():
 @app.route("/statistics")
 def statistics():
         return render_template("Statistics.html")
-<<<<<<< HEAD:main.py
+
 '''
 #development URL
 from pyngrok import ngrok# for dev url
 
 url = ngrok.connect(5000)# setting up a dev url running on port 5000
 print(url) #printing url
-=======
 
->>>>>>> b6e0c4327174c7affe7a4bbe4a92f897a4f4da0d:server.py
 
 #so i found a solution to the probelms we saw earlier with the localhost
 app.run(host="0.0.0.0", port=5000, debug=True) #running the app on 0.0.0.0 port 5000
