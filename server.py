@@ -1,10 +1,10 @@
 #COVID information Web app
-#Haley, Alexander, William, Nabeela, and Cooper
+#
 #Started on 2020/10/1
-#2020/10/7 I got the webserver and development URL working which is good.
-#Function to be able to pip install packages
+#
 #Hi
 #hello world
+<<<<<<< HEAD:main.py
 '''
 def install(package):
   import subprocess
@@ -13,44 +13,47 @@ def install(package):
 #Installing packages
 install("dask[dataframe]")
 '''
+=======
+
+>>>>>>> b6e0c4327174c7affe7a4bbe4a92f897a4f4da0d:server.py
 #Importing libraries
+from flask import Flask, render_template #webserver and backend
+import datetime
+from time import strftime
+import pandas as pd # for analytics csv
 
 
+# grabbing counter data
+inputFile = open("data/infection_data.txt", "r")
+dataString = inputFile.readlines()
+for i in range(0, len(dataString)):
+	stringVal = dataString[i]
+	dataString[i] = stringVal[:-1]
+	dataString[i] = dataString[i].split(":")
 
-# web scrapping will go below this comment
+#setting up the analytics
+
+analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
 
 
 #setting up the app and server
-from flask import Flask, render_template #webserver and backend
+
 
 app = Flask(__name__)
 
 @app.route("/")  # having the apps route as /home wasnt working so this works now
 def main():
+	analytics["daily_visits"][len(analytics["daily_visits"])-1] += 1 #tracking home page vistis, both daily and total.
+	analytics["total_visits"][len(analytics["total_visits"])-1] += 1
+	analytics.to_csv('data/web_analytics.csv')
 	return render_template("index.html")
 
 @app.route("/world")
 def world():
-	inputFile = open("data/infection_data.txt", "r")
-	dataString = inputFile.readlines()
-	for i in range(0, len(dataString)):
-		stringVal = dataString[i]
-		dataString[i] = stringVal[:-1]
-		dataString[i] = dataString[i].split(":")
-
-
 	return render_template("World.html", cases=dataString[0][1], vaccinations=2345, deaths=dataString[1][1], recoveries=dataString[2][1], active=2345, newCases=2345)
 
 @app.route("/us")
 def us():
-	inputFile = open("data/infection_data.txt", "r")
-	dataString = inputFile.readlines()
-	for i in range(0, len(dataString)):
-		stringVal = dataString[i]
-		dataString[i] = stringVal[:-1]
-		dataString[i] = dataString[i].split(":")
-
-
 	return render_template("US.html", cases=dataString[3][1], vaccinations=2345, deaths=dataString[4][1], recoveries=dataString[5][1], active=2345, newCases=2345)
 
 @app.route("/news")
@@ -76,12 +79,16 @@ def prevention():
 @app.route("/statistics")
 def statistics():
         return render_template("Statistics.html")
+<<<<<<< HEAD:main.py
 '''
 #development URL
 from pyngrok import ngrok# for dev url
 
 url = ngrok.connect(5000)# setting up a dev url running on port 5000
 print(url) #printing url
+=======
+
+>>>>>>> b6e0c4327174c7affe7a4bbe4a92f897a4f4da0d:server.py
 
 #so i found a solution to the probelms we saw earlier with the localhost
 app.run(host="0.0.0.0", port=5000, debug=True) #running the app on 0.0.0.0 port 5000
