@@ -4,7 +4,15 @@
 #
 #Hi
 #hello world
+'''
+def install(package):
+  import subprocess
+  subprocess.check_call(["python", '-m', 'pip', 'install', package])
 
+#Installing packages
+install("dask[dataframe]")
+
+'''
 #Importing libraries
 from flask import Flask, render_template #webserver and backend
 import datetime
@@ -23,8 +31,24 @@ for i in range(0, len(dataString)):
 #setting up the analytics
 
 analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
-
-
+# setting up news dataframe
+news = pd.read_csv("data/news_df.csv", index_col=False, usecols=["url","headline","img"])
+print(news["url"][0])
+url1=news["url"][0]; 
+url2=news["url"][1]
+url3=news["url"][2]; 
+url4=news["url"][3]; 
+url5=news["url"][4]; 
+headline1=news["headline"][0]; 
+headline2=news["headline"][1]; 
+headline3=news["headline"][2]; 
+headline4=news["headline"][3]; 
+headline5=news["headline"][4]; 
+img1=news["img"][0]; 
+img2=news["img"][1]; 
+img3=news["img"][2]; 
+img4=news["img"][3]; 
+img5=news["img"][4]
 #setting up the app and server
 
 
@@ -47,7 +71,7 @@ def us():
 
 @app.route("/news")
 def news():
-	return render_template("news.html")
+	return render_template("news.html") #needs work , url1=url1, url2=url2, url3=url3, url4=url4, url5=url5,  headline1=headline1, headline2=headline2, headline3=headline3, headline4=headline4, headline5=headline5, img1=img1, img2=img2, img3=img3, img4=img4, img5=img5
 
 @app.route("/treatment")
 def treatment():
@@ -64,10 +88,21 @@ def rules():
 @app.route("/prevention")
 def prevention():
 	return render_template("preventiontactics.html")
-      
+
 @app.route("/statistics")
 def statistics():
         return render_template("Statistics.html")
+
+@app.route("/about")
+def about():
+	return render_template("about.html")
+
+'''
+#development URL
+from pyngrok import ngrok# for dev url
+
+url = ngrok.connect(5000)# setting up a dev url running on port 5000
+print(url) #printing url
 
 
 #so i found a solution to the probelms we saw earlier with the localhost
@@ -75,4 +110,4 @@ app.run(host="0.0.0.0", port=5000, debug=False) #running the app on 0.0.0.0 port
 #comment stuff for us to understand pls
 #ill try -coop
 #webscraping stuff continued, needs to go here so that it allows the server to start
-
+'''
