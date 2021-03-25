@@ -9,6 +9,7 @@ for i in pipwin:
     subprocess.run(["pipwin", "install", i])
 #installing the rest of the modules
 '''
-pip = ["requests", "beautifulsoup4", "dask", "dask[dataframe]", "bokeh", "matplotlib", "scipy", "flask", "pyngrok", "logger"]
+pip = ["requests", "beautifulsoup4",  "matplotlib", "scipy", "flask", "logger"]
 for i in pip:
     subprocess.run(["pip", "install", i])
+#"dask", "dask[dataframe]", "bokeh", "pyngrok"
