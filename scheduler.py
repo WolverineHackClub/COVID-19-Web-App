@@ -8,7 +8,7 @@ import logging
 import pandas as pd
 
 #opening analytics file
-analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
+#analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
 
 
 # creating error logs
@@ -52,11 +52,11 @@ while(exitCondition==False):
             print("Scraping Data...")
                 
             # update analytic sheet
-            analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
-            newRow = {'date': datetime.date.today(), 'daily_visits': 0, 'total_visits': analytics["total_visits"][len(analytics["total_visits"])-1]}
-            analytics = analytics.append(newRow, ignore_index=True)
-            analytics.to_csv('data/web_analytics.csv')
-            analytics = ""
+            #analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
+            #newRow = {'date': datetime.date.today(), 'daily_visits': 0, 'total_visits': analytics["total_visits"][len(analytics["total_visits"])-1]}
+            #analytics = analytics.append(newRow, ignore_index=True)
+            #analytics.to_csv('data/web_analytics.csv')
+            #analytics = ""
             subprocess.run(["python3", "scraper.py"]) # run the scraper program
             restartCondition = False
         except Exception as err:
