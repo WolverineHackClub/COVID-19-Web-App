@@ -15,8 +15,7 @@ install("dask[dataframe]")
 '''
 #Importing libraries
 from flask import Flask, render_template #webserver and backend
-import datetime
-from time import strftime
+
 import pandas as pd # for analytics csv
 
 
@@ -28,26 +27,24 @@ for i in range(0, len(dataString)):
 	dataString[i] = stringVal[:-1]
 	dataString[i] = dataString[i].split(":")
 
-#setting up the analytics
 
-analytics = pd.read_csv('data/web_analytics.csv', index_col=False, usecols=["date", "daily_visits", "total_visits"])
 # setting up news dataframe
 news = pd.read_csv("data/news_df.csv", index_col=False, usecols=["url","headline","img"])
 print(news["url"][0])
-url1=news["url"][0]; 
+url1=news["url"][0];
 url2=news["url"][1]
-url3=news["url"][2]; 
-url4=news["url"][3]; 
-url5=news["url"][4]; 
-headline1=news["headline"][0]; 
-headline2=news["headline"][1]; 
-headline3=news["headline"][2]; 
-headline4=news["headline"][3]; 
-headline5=news["headline"][4]; 
-img1=news["img"][0]; 
-img2=news["img"][1]; 
-img3=news["img"][2]; 
-img4=news["img"][3]; 
+url3=news["url"][2];
+url4=news["url"][3];
+url5=news["url"][4];
+headline1=news["headline"][0];
+headline2=news["headline"][1];
+headline3=news["headline"][2];
+headline4=news["headline"][3];
+headline5=news["headline"][4];
+img1=news["img"][0];
+img2=news["img"][1];
+img3=news["img"][2];
+img4=news["img"][3];
 img5=news["img"][4]
 #setting up the app and server
 
@@ -56,9 +53,9 @@ app = Flask(__name__)
 
 @app.route("/")  # having the apps route as /home wasnt working so this works now
 def main():
-	analytics["daily_visits"][len(analytics["daily_visits"])-1] += 1 #tracking home page vistis, both daily and total.
-	analytics["total_visits"][len(analytics["total_visits"])-1] += 1
-	analytics.to_csv('data/web_analytics.csv')
+	#analytics["daily_visits"][len(analytics["daily_visits"])-1] += 1 #tracking home page vistis, both daily and total.
+	#analytics["total_visits"][len(analytics["total_visits"])-1] += 1
+	#analytics.to_csv('data/web_analytics.csv')
 	return render_template("index.html")
 
 @app.route("/world")
